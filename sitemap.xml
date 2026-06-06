@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://your-group-url.com/</loc>
+         <loc>https://hawksimon.github.io/ECUST-Carbon-Group-Wiki/</loc>
          <lastmod>2026-06-06</lastmod>
     </url>
     <url>
-         <loc>https://your-group-url.com/0_safety/</loc>
+         <loc>https://hawksimon.github.io/ECUST-Carbon-Group-Wiki/0_safety/</loc>
          <lastmod>2026-06-06</lastmod>
     </url>
     <url>
-         <loc>https://your-group-url.com/1_preparation/</loc>
+         <loc>https://hawksimon.github.io/ECUST-Carbon-Group-Wiki/1_preparation/</loc>
          <lastmod>2026-06-06</lastmod>
     </url>
     <url>
-         <loc>https://your-group-url.com/2_duty/</loc>
+         <loc>https://hawksimon.github.io/ECUST-Carbon-Group-Wiki/2_duty/</loc>
          <lastmod>2026-06-06</lastmod>
     </url>
     <url>
-         <loc>https://your-group-url.com/3_issues/</loc>
+         <loc>https://hawksimon.github.io/ECUST-Carbon-Group-Wiki/3_issues/</loc>
          <lastmod>2026-06-06</lastmod>
     </url>
     <url>
-         <loc>https://your-group-url.com/4_rules/</loc>
+         <loc>https://hawksimon.github.io/ECUST-Carbon-Group-Wiki/4_rules/</loc>
          <lastmod>2026-06-06</lastmod>
     </url>
     <url>
-         <loc>https://your-group-url.com/5_maintenance/</loc>
+         <loc>https://hawksimon.github.io/ECUST-Carbon-Group-Wiki/5_maintenance/</loc>
+         <lastmod>2026-06-06</lastmod>
+    </url>
+    <url>
+         <loc>https://hawksimon.github.io/ECUST-Carbon-Group-Wiki/6_contributors/</loc>
          <lastmod>2026-06-06</lastmod>
     </url>
 </urlset>
