@@ -1,51 +1,68 @@
-site_name: ECUST Carbon Group's Wiki
-site_url: https://your-group-url.com
-repo_url: https://github.com/your-username/your-repo # 配置此项会在右上角显示 GitHub 图标
+# ==========================================
+# 1. 网站基础信息配置
+# ==========================================
+site_name: ECUST Carbon Group's Wiki # 网站的左上角主标题
+site_url: https://hawksimon.github.io/ECUST-Carbon-Group-Wiki/ # 部署后的正式网址
+repo_url: https://github.com/Hawksimon/ECUST-Carbon-Group-Wiki # 填入此项会在网页右上角显示 GitHub 跳转图标
 
+# ==========================================
+# 2. 界面主题与视觉配置 (Material for MkDocs)
+# ==========================================
 theme:
   name: material
-  language: zh # 设置为中文界面
+  language: zh # 网站语言设置为中文（影响搜索分词和系统提示词）
+  custom_dir: overrides # 覆盖默认主题的自定义文件夹（用于加载 Giscus 评论区等）
   features:
-    - navigation.sections
-   # - navigation.tabs # 启用顶部标签页导航
-    - navigation.top # 启用返回顶部按钮
-    - search.suggest # 启用搜索建议
-    - search.highlight # 启用搜索关键词高亮
+    - navigation.sections # 将导航栏顶级目录显示为加粗的分组标题（不可点击）
+    # - navigation.tabs # 若取消注释，将启用顶部标签页导航
+    - navigation.top # 启用网页右下角的“返回顶部”箭头按钮
+    - search.suggest # 搜索时根据拼写提供词汇建议
+    - search.highlight # 在搜索结果页面高亮显示被搜索的关键词
   palette:
-    # 浅色模式（图片中的日间模式）
+    # 日间模式配置（浅色）
     - media: "(prefers-color-scheme: light)"
       scheme: default
       toggle:
         icon: material/brightness-7
         name: 切换至深色模式
-    # 深色模式（图片中的暗黑模式）
+    # 夜间模式配置（深色）
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       toggle:
         icon: material/brightness-4
         name: 切换至浅色模式
 
-# 在你原有的 theme 配置下方，加上这些：
+# ==========================================
+# 3. Markdown 语法扩展插件
+# ==========================================
 markdown_extensions:
-  - admonition            # 开启提示块功能
-  - pymdownx.details      # 允许提示块折叠
-  - pymdownx.superfences  # 支持更复杂的代码块和嵌套
-  - attr_list
-  
+  - admonition            # 开启高亮提示块功能 (!!! info, !!! danger 等)
+  - pymdownx.details      # 允许将提示块折叠收起
+  - pymdownx.superfences  # 支持更复杂的代码块、嵌套排版以及数学公式
+  - attr_list             # 允许自定义 HTML 属性（如给标题自定义锚点 ID {: #id }）
+  - md_in_html            # 允许在 HTML 标签（如贡献者卡片网格 div）中继续使用 Markdown 语法排版
+
+# ==========================================
+# 4. 左侧导航栏层级结构 (重要！新增页面需在此报备)
+# 注意：严禁使用 Tab 键，请严格使用空格对齐！
+# ==========================================
 nav:
   - Home: index.md
-  - Wikis:
+  - Wikis: # 后方无文件名，且子项缩进，代表这是一个纯文本的分类标题
     - 实验安全: 0_safety.md
     - 进组前的准备: 1_preparation.md
     - 实验室值日: 2_duty.md
     - 日常事务: 3_issues.md
     - 实验室规章: 4_rules.md
     - 编写和维护Wiki: 5_maintenance.md
-    # 你可以继续往下加
-    
+  - Contributors: 6_contributors.md # 独立于 Wikis 外的单页
+
+# ==========================================
+# 5. 第三方功能插件
+# ==========================================
 plugins:
   - search:
-      lang: zh
+      lang: zh # 开启中文分词搜索支持（必须与 theme 的 language 匹配）
   - git-revision-date-localized:
-      type: date   # 只显示日期。如果你想显示具体时间，可以改成 datetime
-      locale: zh   # 设置为中文日期格式
+      type: date   # 页面底部/标题下自动显示“最后更新于：YYYY年MM月DD日”
+      locale: zh   # 日期显示格式为中文

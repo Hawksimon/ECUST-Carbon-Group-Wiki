@@ -1,0 +1,31 @@
+name: Deploy MkDocs
+
+# 触发条件：当主分支 (main) 有任何人提交了新代码时，机器人就会启动
+on:
+  push:
+    branches:
+      - main
+
+# 赋予机器人修改和发布网页的权限
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 机器人下载你们的源码库 (fetch-depth: 0 是为了让日期插件获取完整时间线)
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      # 2. 机器人安装 Python 环境
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+          
+      # 3. 机器人安装 MkDocs 和你用到的插件
+      - run: pip install mkdocs-material mkdocs-git-revision-date-localized-plugin
+      
+      # 4. 机器人执行一键发布命令！
+      - run: mkdocs gh-deploy --force
