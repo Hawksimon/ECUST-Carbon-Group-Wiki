@@ -1,0 +1,51 @@
+site_name: ECUST Carbon Group's Wiki
+site_url: https://your-group-url.com
+repo_url: https://github.com/your-username/your-repo # 配置此项会在右上角显示 GitHub 图标
+
+theme:
+  name: material
+  language: zh # 设置为中文界面
+  features:
+    - navigation.sections
+   # - navigation.tabs # 启用顶部标签页导航
+    - navigation.top # 启用返回顶部按钮
+    - search.suggest # 启用搜索建议
+    - search.highlight # 启用搜索关键词高亮
+  palette:
+    # 浅色模式（图片中的日间模式）
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: 切换至深色模式
+    # 深色模式（图片中的暗黑模式）
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: 切换至浅色模式
+
+# 在你原有的 theme 配置下方，加上这些：
+markdown_extensions:
+  - admonition            # 开启提示块功能
+  - pymdownx.details      # 允许提示块折叠
+  - pymdownx.superfences  # 支持更复杂的代码块和嵌套
+  - attr_list
+  
+nav:
+  - Home: index.md
+  - Wikis:
+    - 实验安全: 0_safety.md
+    - 进组前的准备: 1_preparation.md
+    - 实验室值日: 2_duty.md
+    - 日常事务: 3_issues.md
+    - 实验室规章: 4_rules.md
+    - 编写和维护Wiki: 5_maintenance.md
+    # 你可以继续往下加
+    
+plugins:
+  - search:
+      lang: zh
+  - git-revision-date-localized:
+      type: date   # 只显示日期。如果你想显示具体时间，可以改成 datetime
+      locale: zh   # 设置为中文日期格式
